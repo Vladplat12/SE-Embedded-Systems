@@ -81,13 +81,13 @@ transmit and receive with 0.1 second and in 0.5 second
 resolution (separately).
 
 ADC:
-    * ADC required parameters 12 bit ADC.
-    * Running the test beforehand, we should already have the
+* ADC required parameters 12 bit ADC.
+* Running the test beforehand, we should already have the
 bitstream for the analog to digital conversion at the
 current voltage.
-    * For each iteration Run the conversion and compare the
+* For each iteration Run the conversion and compare the
 ADC result with already known result.
-    * Send the P.C. Testing Program the final test result (after
+* Send the P.C. Testing Program the final test result (after
 all the iterations).
 
 
