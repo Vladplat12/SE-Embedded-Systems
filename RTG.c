@@ -1,5 +1,4 @@
 #include "RTG.h"
-#include "periphery.h"
 
 int data_Recevied_flag = 0;
 client_address result_buffer;
