@@ -56,38 +56,38 @@ peripheral.
 2. Tests will vary between peripherals; the following includes Unit Testing for every Peripheral:
 
 UART, I2C:
-    ** The below procedure is described for UART testing but it
+    * The below procedure is described for UART testing but it
 stands to I2C.
-    ** Peripheral testing is required to be done using DMA
+    * Peripheral testing is required to be done using DMA
 mode if possible.
-    ** Each Peripheral testing will require peripheral
+    * Each Peripheral testing will require peripheral
 parameters (i.e. for UART you can assume BAUD
 Rate 115200, 8bit Data, 1 Stop Bit, No parity).
-    ** For the amount of needed iteration, the Testing Program
+    * For the amount of needed iteration, the Testing Program
 will send the received Bit Pattern to the UART0, which
 in turn will pass the data to the UART1 port on the UUT.
 UART1 will send back the received string to UART0
 (predefined program waiting for incoming data).
-    ** For every iteration, the UUT Testing program will
+    * For every iteration, the UUT Testing program will
 receive the incoming data from UART0 and compare it to
 sent data.
-    ** It the testing has been successful for all iterations; a
+    * It the testing has been successful for all iterations; a
 success result should be sent to the Testing P.C. Program.
-    ** If at any time during the iterations a test has failed,
+    * If at any time during the iterations a test has failed,
 testing should be stopped and a Failure result should be
 sent to the P.C. Testing Program.
-    ** Calculate how long does it take to preform each I2C
+    * Calculate how long does it take to preform each I2C
 transmit and receive with 0.1 second and in 0.5 second
 resolution (separately).
 
 ADC:
-    ** ADC required parameters 12 bit ADC.
-    ** Running the test beforehand, we should already have the
+    * ADC required parameters 12 bit ADC.
+    * Running the test beforehand, we should already have the
 bitstream for the analog to digital conversion at the
 current voltage.
-    ** For each iteration Run the conversion and compare the
+    * For each iteration Run the conversion and compare the
 ADC result with already known result.
-    ** Send the P.C. Testing Program the final test result (after
+    * Send the P.C. Testing Program the final test result (after
 all the iterations).
 
 
