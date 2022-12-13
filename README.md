@@ -61,8 +61,7 @@ stands to I2C.
 * Peripheral testing is required to be done using DMA
 mode if possible.
 * Each Peripheral testing will require peripheral
-parameters (i.e. for UART you can assume BAUD
-Rate 115200, 8bit Data, 1 Stop Bit, No parity).
+parameters (for UART BAUD Rate 115200, 8bit Data, 1 Stop Bit, No parity).
 * For the amount of needed iteration, the Testing Program
 will send the received Bit Pattern to the UART0, which
 in turn will pass the data to the UART1 port on the UUT.
