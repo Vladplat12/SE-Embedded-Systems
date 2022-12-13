@@ -15,7 +15,7 @@ out the peripheral to be tested and starts running the test.
 Testing Procedure:
   1. The Testing program running on the P.C. (the Server) communicates
 with UUT (the client) through the UDP/IP communication protocol.
-  2. The server (Hercules) will send the commands (Perform the unit testing) on the
+  2. The server (Hercules) send the commands (Perform the unit testing) on the
 UUT (the Client), and wait for the response from the UUT.
   3. The UUT Ethernet device will receive the command and using the
 LWIP stack pass it to the "UUT Testing Program"
@@ -31,8 +31,7 @@ success or failure, each peripheral will have its own set of tests.
 program.
 
 Proprietary Protocols:
-1. The command sent from the P.C. Testing Program to the UUT will
-contain the following:
+1. The command sent from the P.C. Testing Program to the UUT contain the following:
   * Test-ID – 4 Bytes.
   * Peripheral to be tested – 1 Byte (a bitfield for the peripheral
 being tested: 2 – UART, I2C – 8, ADC – 16).
@@ -43,37 +42,37 @@ sent to UUT).
   * Bit pattern – Bit pattern length (the actual string of characters
 sent to the UUT).
 2. The result protocol sent from the UUT back to the P.C. Testing
-Program will contain the following:
+Program contain the following:
   * Test-ID – 4 Bytes (a number given to the test so it'll be easy to
 map it to the later on test result).
   * Test Result – test succeeded, test failed, error in sent packet.
 
 
 UUT Testing Program (Client Side):
-1. Once the UUT Testing Program receives the test command, it will
+1. Once the UUT Testing Program receives the test command, it
 acquire the needed parameters and initiate the test on the required
 peripheral.
-2. Tests will vary between peripherals; the following includes Unit Testing for every Peripheral:
+2. Tests vary between peripherals; the following includes Unit Testing for every Peripheral:
 
 UART, I2C:
 * The below procedure is described for UART testing but it
 stands to I2C.
 * Peripheral testing is required to be done using DMA
 mode if possible.
-* Each Peripheral testing will require peripheral
+* Each Peripheral testing require peripheral
 parameters (for UART BAUD Rate 115200, 8bit Data, 1 Stop Bit, No parity).
 * For the amount of needed iteration, the Testing Program
-will send the received Bit Pattern to the UART0, which
-in turn will pass the data to the UART1 port on the UUT.
-UART1 will send back the received string to UART0
+send the received Bit Pattern to the UART0, which
+in turn pass the data to the UART1 port on the UUT.
+UART1 send back the received string to UART0
 (predefined program waiting for incoming data).
-* For every iteration, the UUT Testing program will
+* For every iteration, the UUT Testing program
 receive the incoming data from UART0 and compare it to
 sent data.
 * It the testing has been successful for all iterations; a
-success result should be sent to the Testing P.C. Program.
+success result is sent to the Testing P.C. Program.
 * If at any time during the iterations a test has failed,
-testing should be stopped and a Failure result should be
+testing is stopped and a Failure result
 sent to the P.C. Testing Program.
 * Calculate how long does it take to preform each I2C
 transmit and receive with 0.1 second and in 0.5 second
